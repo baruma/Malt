@@ -7,30 +7,10 @@
 
 import Foundation
 
-#warning("Don't go any further without consultationg as to how to approach the tag system you want to make.  WORK WITH THE ABOVE CLASSES FOR NOW.")
-
-/*
- THINK THE TAG SYSTEM THROUGH AND THE DATA FLOW THE WOULD ENSUE WITH IT.
- */
-
 struct Aroma {
     private let intensity: Int = Int()
     private let alcoholPresence: Int = Int()
-    
+    private var maltAroma: [String] = [String]()
+    private var hopAroma: [String] = [String]()
+    private var notes: String = String()
 }
-
-
-//
-//Aroma
-
-//   - Malt Aroma (Tags)
-//   - Hop Aroma (Tags)
-//   - Notes
-//
-//Flavor & Aftertaste
-//   - Intensity
-//   - Malt Flavour (Tags)
-//   - Hops Flavor (Tags)
-//   - Hop Bitterness
-//   - Malt Sweetness
-//   - Notes

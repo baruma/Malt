@@ -9,7 +9,7 @@ import UIKit
 
 class BreweryListVC: UIViewController, BottomScrollListener {
 
-    // This is new
+    // Pay attention here.
     lazy var dataSource: BreweryDataSource = { 
        return  BreweryDataSource(bottomScrollListener: self)
     }()
@@ -41,6 +41,7 @@ class BreweryListVC: UIViewController, BottomScrollListener {
         tableView.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height)
         tableView.register(BreweryTableViewCell.self, forCellReuseIdentifier: BreweryTableViewCell.reuseID)
         tableView.delegate = self
+        // Pay attention here.
         tableView.dataSource = dataSource
     }
 

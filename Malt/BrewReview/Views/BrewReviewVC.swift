@@ -11,13 +11,14 @@ class BrewReviewVC: UIViewController {
     
     var collectionView: UICollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout.init())
 
-    lazy var viewModel : BreweryReviewViewModel = {
+    lazy var dataSource: BrewReviewDataSource = BrewReviewDataSource()
+    
+    lazy var viewModel : BrewReviewViewModel = {
         return viewModel
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         configureCollectionView()
     }
     
@@ -29,6 +30,9 @@ class BrewReviewVC: UIViewController {
 //        collectionView.dataSource = self
         
         collectionView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
+        
+        UIView.setAnimationsEnabled(true)
+        collectionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
     }
 
 }
