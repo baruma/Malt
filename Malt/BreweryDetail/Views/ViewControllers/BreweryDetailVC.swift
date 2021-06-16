@@ -11,9 +11,8 @@ class BreweryDetailVC: UIViewController {
     
     private var tableView: UITableView = UITableView(frame: .zero)
     private var addBreweryButton: AddItemActionButton = AddItemActionButton(frame: .zero)
-    //private let addBrewReviewButton: AddItemActionButton = AddItemActionButton(coder: <#NSCoder#>)
     var selectedBrewery: Brewery?
-
+    
     lazy var viewModel = BreweryDetailViewModel(brewery: selectedBrewery!)
 
     override func viewDidLoad() {
@@ -48,6 +47,18 @@ class BreweryDetailVC: UIViewController {
             addBreweryButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50),
             addBreweryButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
+        
+        addBreweryButton.addTarget(self, action: #selector(onBreweryButtonPressed(sender:)), for: .touchUpInside)
+     }
+    
+    // MARK: TODO - Stop reaching into the viewModel and Coordinator nested in it like this it's not good.
+    @objc func onBreweryButtonPressed(sender: UIButton) {
+        viewModel.mainCoordinator?.goToBrewReviewScreen()
+    }
+    
+    // setter injection
+    func setCoordinator(coordinator: MainCoordinator) {
+        viewModel.mainCoordinator = coordinator
     }
     
 }

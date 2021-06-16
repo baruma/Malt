@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-/// TODO: Make a better name for this class.
+// MARK:  TODO - Make a better name for this class.
 
 class MainCoordinator: Coordinator {
     
@@ -31,7 +31,16 @@ class MainCoordinator: Coordinator {
     func goToBreweryDetailScreen(brewery: Brewery) {
         let breweryDetailVC = BreweryDetailVC()
         breweryDetailVC.selectedBrewery = brewery
+        
+        let viewModel = BreweryDetailViewModel(brewery: brewery)
+        breweryDetailVC.setCoordinator(coordinator: self)
         rootViewController.pushViewController(breweryDetailVC, animated: true)
+    }
+    
+     func goToBrewReviewScreen() {
+        let brewReviewVC = BrewReviewVC()
+        print("Going to BrewReview Screen")
+        rootViewController.pushViewController(brewReviewVC, animated: true)
     }
     
     func back() {

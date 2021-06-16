@@ -10,7 +10,7 @@ import UIKit
 class BreweryListVC: UIViewController, BottomScrollListener {
 
     // This is new
-    lazy var dataSource: BreweryDataSource = {
+    lazy var dataSource: BreweryDataSource = { 
        return  BreweryDataSource(bottomScrollListener: self)
     }()
     
