@@ -15,7 +15,7 @@ class BaseInfoCell: UICollectionViewCell {
     private let beerTypeStackView: UIStackView = UIStackView()
     
     private let beerNameLabel: BoldTitleLabel = BoldTitleLabel()
-    private let beerTypeLabel: BoldTitleLabel = BoldTitleLabel()
+    private let beerTypeLabel: MediumTextLabel = MediumTextLabel()
     
     private let beerNameTextField: UITextField = UITextField(frame: .zero)
     private let beerTypeTextField: UITextField = UITextField(frame: .zero)
