@@ -24,6 +24,9 @@ class BrewReviewVC: UIViewController {
     
     func configureCollectionView() {
         view.addSubview(collectionView)
+        
+        collectionView.register(BaseInfoCell.self, forCellWithReuseIdentifier: BaseInfoCell.reuseID)
+        
         collectionView.backgroundColor = .black
         
         collectionView.delegate = self

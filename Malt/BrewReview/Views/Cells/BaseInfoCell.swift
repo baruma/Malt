@@ -11,41 +11,76 @@ class BaseInfoCell: UICollectionViewCell {
     
     static let reuseID = "BaseInfoCell"
     
+    private let beerNameStackView: UIStackView = UIStackView()
+    private let beerTypeStackView: UIStackView = UIStackView()
     
-    // Should not be a label
     private let beerNameLabel: BoldTitleLabel = BoldTitleLabel()
-    private let beerTypeLabel: MediumTextLabel = MediumTextLabel()
+    private let beerTypeLabel: BoldTitleLabel = BoldTitleLabel()
+    
+    private let beerNameTextField: UITextField = UITextField(frame: .zero)
+    private let beerTypeTextField: UITextField = UITextField(frame: .zero)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
      
-        configure()
+        configureCell()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func configure() {
-        addSubview(beerNameLabel)
-        addSubview(beerTypeLabel)
+    private func configureBeerNameStackView() {
+        beerNameStackView.addSubview(beerNameLabel)
+        beerNameStackView.addSubview(beerNameTextField)
         
-        beerNameLabel.textColor = .systemYellow
-        beerTypeLabel.textColor = .white
+        beerNameStackView.backgroundColor = .systemOrange
+        beerNameStackView.distribution = .equalSpacing
         
         beerNameLabel.text = "Beer Name Label"
+        beerNameLabel.textColor = .systemYellow
+
+        beerNameTextField.placeholder = "Beer Name Placeholder"
+        
+        beerNameStackView.translatesAutoresizingMaskIntoConstraints = false
+        beerNameLabel.translatesAutoresizingMaskIntoConstraints = false
+        beerNameTextField.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    private func configureBeerTypeStackView() {
+        beerTypeStackView.addSubview(beerTypeLabel)
+        beerTypeStackView.addSubview(beerTypeLabel)
+        
+        beerTypeStackView.backgroundColor = .systemTeal
+        beerTypeStackView.distribution = .equalSpacing
+        
         beerTypeLabel.text = "Beer Type Label"
+        beerTypeLabel.textColor = .white
+
+        beerNameTextField.placeholder = "Beer Type Placeholder"
+        
+        beerTypeStackView.translatesAutoresizingMaskIntoConstraints = false
+        beerTypeLabel.translatesAutoresizingMaskIntoConstraints = false
+        beerNameTextField.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    private func configureCell() {
+        addSubview(beerNameStackView)
+        addSubview(beerTypeStackView)
+        
+        configureBeerNameStackView()
+        configureBeerTypeStackView()
         
         NSLayoutConstraint.activate([
-            beerNameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 0),
-            beerNameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 0),
-            beerNameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5),
-            beerNameLabel.bottomAnchor.constraint(equalTo: beerTypeLabel.topAnchor, constant: 5),
+            beerNameStackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 0),
+            beerNameStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 0),
+            beerNameStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 0),
+            // beerNameStackView.bottomAnchor.constraint(equalTo: , constant: )
             
-            beerTypeLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 0),
-            beerTypeLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 0),
-            beerTypeLabel.topAnchor.constraint(equalTo: beerNameLabel.bottomAnchor),
-            beerTypeLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 5)
+            beerTypeStackView.topAnchor.constraint(equalTo: beerNameStackView.bottomAnchor, constant: 0),
+            beerTypeStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 0),
+            beerTypeStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 0),
+            beerTypeStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0)
         ])
     }
 }
