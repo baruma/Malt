@@ -39,7 +39,6 @@ class MainCoordinator: Coordinator {
     
      func goToBrewReviewScreen() {
         let brewReviewVC = BrewReviewVC()
-        print("Going to BrewReview Screen")
         rootViewController.pushViewController(brewReviewVC, animated: true)
     }
     

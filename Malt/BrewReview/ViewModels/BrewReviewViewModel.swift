@@ -11,7 +11,7 @@ import UIKit
 struct BrewReviewViewModel {
    private var brewReviews: DynamicValue<[BrewReview]> 
     
-    init(brewReviews: [BrewReview]) {
+   init(brewReviews: [BrewReview]) {
         self.brewReviews = DynamicValue(brewReviews)
     }
     

@@ -24,13 +24,13 @@ class BrewReviewVC: UIViewController {
     
     func configureCollectionView() {
         view.addSubview(collectionView)
-        collectionView.backgroundColor = .purple
+        collectionView.backgroundColor = .black
         
         collectionView.delegate = self
-//        collectionView.dataSource = self
+        collectionView.dataSource = dataSource
         
         collectionView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
-        
+        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
         UIView.setAnimationsEnabled(true)
         collectionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
     }

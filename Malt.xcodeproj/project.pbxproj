@@ -10,6 +10,10 @@
 		17C2085065465F43BD068D4E /* Pods_Malt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6546A6379E39F789BE09E573 /* Pods_Malt.framework */; };
 		962FBC142655E34000C81563 /* DynamicValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962FBC132655E34000C81563 /* DynamicValue.swift */; };
 		963422E12677F73400F4D700 /* BrewReviewDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963422E02677F73400F4D700 /* BrewReviewDatasource.swift */; };
+		963422E6267ACE2700F4D700 /* BaseInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963422E5267ACE2700F4D700 /* BaseInfoCell.swift */; };
+		963422E8267ACE5E00F4D700 /* AppearanceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963422E7267ACE5E00F4D700 /* AppearanceCell.swift */; };
+		963422EA267ACE8C00F4D700 /* AromaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963422E9267ACE8C00F4D700 /* AromaCell.swift */; };
+		963422EC267ACEA800F4D700 /* FlavorAndAftertasteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963422EB267ACEA800F4D700 /* FlavorAndAftertasteCell.swift */; };
 		9635423E2673DC6D007A7201 /* BrewReviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9635423D2673DC6D007A7201 /* BrewReviewVC.swift */; };
 		963542402673DCE9007A7201 /* BrewReviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9635423F2673DCE9007A7201 /* BrewReviewViewModel.swift */; };
 		964372262656D681009540C8 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964372252656D681009540C8 /* Coordinator.swift */; };
@@ -56,6 +60,10 @@
 		6546A6379E39F789BE09E573 /* Pods_Malt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Malt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		962FBC132655E34000C81563 /* DynamicValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicValue.swift; sourceTree = "<group>"; };
 		963422E02677F73400F4D700 /* BrewReviewDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewReviewDatasource.swift; sourceTree = "<group>"; };
+		963422E5267ACE2700F4D700 /* BaseInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseInfoCell.swift; sourceTree = "<group>"; };
+		963422E7267ACE5E00F4D700 /* AppearanceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceCell.swift; sourceTree = "<group>"; };
+		963422E9267ACE8C00F4D700 /* AromaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AromaCell.swift; sourceTree = "<group>"; };
+		963422EB267ACEA800F4D700 /* FlavorAndAftertasteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlavorAndAftertasteCell.swift; sourceTree = "<group>"; };
 		9635423D2673DC6D007A7201 /* BrewReviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewReviewVC.swift; sourceTree = "<group>"; };
 		9635423F2673DCE9007A7201 /* BrewReviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewReviewViewModel.swift; sourceTree = "<group>"; };
 		964372252656D681009540C8 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -128,6 +136,17 @@
 			path = BreweryList;
 			sourceTree = "<group>";
 		};
+		963422E4267ACE0200F4D700 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				963422E5267ACE2700F4D700 /* BaseInfoCell.swift */,
+				963422E7267ACE5E00F4D700 /* AppearanceCell.swift */,
+				963422E9267ACE8C00F4D700 /* AromaCell.swift */,
+				963422EB267ACEA800F4D700 /* FlavorAndAftertasteCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		9635423A2673D60E007A7201 /* BrewReview */ = {
 			isa = PBXGroup;
 			children = (
@@ -150,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				9635423D2673DC6D007A7201 /* BrewReviewVC.swift */,
+				963422E4267ACE0200F4D700 /* Cells */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -543,6 +563,7 @@
 				969713092642FCA3004F7894 /* Task.swift in Sources */,
 				96B2D74926518516007B0F86 /* BreweryDataSource.swift in Sources */,
 				9697132E2645AEF9004F7894 /* BreweryAPIModel.swift in Sources */,
+				963422EC267ACEA800F4D700 /* FlavorAndAftertasteCell.swift in Sources */,
 				9697130B2642FCEE004F7894 /* ParametersEncoding.swift in Sources */,
 				96B2D74B2651A1B1007B0F86 /* HTTPError.swift in Sources */,
 				969713162643037C004F7894 /* ProviderProtocol.swift in Sources */,
@@ -551,10 +572,13 @@
 				9697131826430426004F7894 /* URLSessionProtocol.swift in Sources */,
 				96F6B9E42631F12200598477 /* BreweryListVC.swift in Sources */,
 				9697132C2644A27E004F7894 /* BreweryMapper.swift in Sources */,
+				963422EA267ACE8C00F4D700 /* AromaCell.swift in Sources */,
 				9662C06A26770AD2007B961B /* Appearance.swift in Sources */,
 				969713242643B3F0004F7894 /* Brewery.swift in Sources */,
+				963422E6267ACE2700F4D700 /* BaseInfoCell.swift in Sources */,
 				9697131226430239004F7894 /* NetworkResponse.swift in Sources */,
 				964372262656D681009540C8 /* Coordinator.swift in Sources */,
+				963422E8267ACE5E00F4D700 /* AppearanceCell.swift in Sources */,
 				9657C1FA266147520066C891 /* AddItemActionButton.swift in Sources */,
 				9662C066267704EF007B961B /* BrewReview.swift in Sources */,
 				9662C06826770ABB007B961B /* BaseInfo.swift in Sources */,
