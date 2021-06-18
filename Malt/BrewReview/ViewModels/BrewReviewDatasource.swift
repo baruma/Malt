@@ -8,14 +8,15 @@
 import Foundation
 import UIKit
 
-class BrewReviewDataSource: GenericDataSource<BrewReview>, UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+class BrewReviewDataSource: GenericDataSource<BrewReview>, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let baseInfoCell = collectionView.dequeueReusableCell(withReuseIdentifier: BaseInfoCell.reuseID, for: indexPath) as! BaseInfoCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! UITableViewCell
         
-        return baseInfoCell
+        return cell
     }
+
 }

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BaseInfoCell: UICollectionViewCell {
+class BaseInfoCell: UITableViewCell {
     
     static let reuseID = "BaseInfoCell"
     
@@ -20,13 +20,13 @@ class BaseInfoCell: UICollectionViewCell {
     private let beerNameTextField: UITextField = UITextField(frame: .zero)
     private let beerTypeTextField: UITextField = UITextField(frame: .zero)
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-     
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        backgroundColor = .black
         configureCell()
     }
     
-    required init?(coder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -35,12 +35,13 @@ class BaseInfoCell: UICollectionViewCell {
         beerNameStackView.addSubview(beerNameTextField)
         
         beerNameStackView.backgroundColor = .systemOrange
-        beerNameStackView.distribution = .equalSpacing
+        beerNameStackView.distribution = .fillProportionally
         
         beerNameLabel.text = "Beer Name Label"
         beerNameLabel.textColor = .systemYellow
 
         beerNameTextField.placeholder = "Beer Name Placeholder"
+        beerNameTextField.backgroundColor = .blue
         
         beerNameStackView.translatesAutoresizingMaskIntoConstraints = false
         beerNameLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -51,13 +52,15 @@ class BaseInfoCell: UICollectionViewCell {
         beerTypeStackView.addSubview(beerTypeLabel)
         beerTypeStackView.addSubview(beerTypeLabel)
         
-        beerTypeStackView.backgroundColor = .systemTeal
-        beerTypeStackView.distribution = .equalSpacing
+        beerTypeStackView.backgroundColor = .systemGreen
+        beerTypeStackView.distribution = .fillProportionally
         
         beerTypeLabel.text = "Beer Type Label"
         beerTypeLabel.textColor = .white
 
         beerNameTextField.placeholder = "Beer Type Placeholder"
+        beerTypeTextField.backgroundColor = .yellow
+
         
         beerTypeStackView.translatesAutoresizingMaskIntoConstraints = false
         beerTypeLabel.translatesAutoresizingMaskIntoConstraints = false

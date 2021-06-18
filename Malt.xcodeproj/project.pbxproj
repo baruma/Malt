@@ -234,7 +234,7 @@
 			path = Buttons;
 			sourceTree = "<group>";
 		};
-		9662C0642677047D007B961B /* Brew Review */ = {
+		9662C0642677047D007B961B /* Brew Review Models */ = {
 			isa = PBXGroup;
 			children = (
 				9662C065267704EF007B961B /* BrewReview.swift */,
@@ -243,7 +243,7 @@
 				9662C06B26770AEA007B961B /* Aroma.swift */,
 				9662C06D26770AFB007B961B /* FlavorAndAftertaste.swift */,
 			);
-			path = "Brew Review";
+			path = "Brew Review Models";
 			sourceTree = "<group>";
 		};
 		969713022642FAC5004F7894 /* Protocols */ = {
@@ -300,7 +300,7 @@
 			children = (
 				969713252643B587004F7894 /* BreweryAggregate.swift */,
 				969713232643B3F0004F7894 /* Brewery.swift */,
-				9662C0642677047D007B961B /* Brew Review */,
+				9662C0642677047D007B961B /* Brew Review Models */,
 			);
 			path = "Malt Models";
 			sourceTree = "<group>";

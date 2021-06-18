@@ -9,7 +9,7 @@ import UIKit
 
 class BrewReviewVC: UIViewController {
     
-    var collectionView: UICollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout.init())
+    var tableView: UITableView = UITableView(frame: .zero)
 
     lazy var dataSource: BrewReviewDataSource = BrewReviewDataSource()
     
@@ -19,25 +19,25 @@ class BrewReviewVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureCollectionView()
+        configureTableView()
     }
     
-    func configureCollectionView() {
-        view.addSubview(collectionView)
+    func configureTableView() {
+        view.addSubview(tableView)
         
-        collectionView.register(BaseInfoCell.self, forCellWithReuseIdentifier: BaseInfoCell.reuseID)
+      //  tableView.register(BaseInfoCell.self, forCellWithReuseIdentifier: BaseInfoCell.reuseID)
         
-        collectionView.backgroundColor = .black
+        tableView.backgroundColor = .black
         
-        collectionView.delegate = self
-        collectionView.dataSource = dataSource
+        tableView.delegate = self
+        tableView.dataSource = dataSource
         
-        collectionView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        tableView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         UIView.setAnimationsEnabled(true)
-        collectionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        tableView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
     }
 
 }
 
-extension BrewReviewVC: UICollectionViewDelegate {}
+extension BrewReviewVC: UITableViewDelegate {}
