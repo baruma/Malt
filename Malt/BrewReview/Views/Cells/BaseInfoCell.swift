@@ -31,11 +31,12 @@ class BaseInfoCell: UITableViewCell {
     }
     
     private func configureBeerNameStackView() {
-        beerNameStackView.addSubview(beerNameLabel)
-        beerNameStackView.addSubview(beerNameTextField)
+        beerNameStackView.addArrangedSubview(beerNameLabel)
+        beerNameStackView.addArrangedSubview(beerNameTextField)
         
         beerNameStackView.backgroundColor = .systemOrange
         beerNameStackView.distribution = .fillProportionally
+        beerNameStackView.axis = .vertical
         
         beerNameLabel.text = "Beer Name Label"
         beerNameLabel.textColor = .systemYellow
@@ -46,14 +47,16 @@ class BaseInfoCell: UITableViewCell {
         beerNameStackView.translatesAutoresizingMaskIntoConstraints = false
         beerNameLabel.translatesAutoresizingMaskIntoConstraints = false
         beerNameTextField.translatesAutoresizingMaskIntoConstraints = false
+ 
     }
     
     private func configureBeerTypeStackView() {
-        beerTypeStackView.addSubview(beerTypeLabel)
-        beerTypeStackView.addSubview(beerTypeLabel)
+        beerTypeStackView.addArrangedSubview(beerTypeLabel)
+        beerTypeStackView.addArrangedSubview(beerTypeTextField)
         
         beerTypeStackView.backgroundColor = .systemGreen
         beerTypeStackView.distribution = .fillProportionally
+        beerTypeStackView.axis = .vertical
         
         beerTypeLabel.text = "Beer Type Label"
         beerTypeLabel.textColor = .white
@@ -68,8 +71,8 @@ class BaseInfoCell: UITableViewCell {
     }
     
     private func configureCell() {
-        addSubview(beerNameStackView)
-        addSubview(beerTypeStackView)
+        contentView.addSubview(beerNameStackView)
+        contentView.addSubview(beerTypeStackView)
         
         configureBeerNameStackView()
         configureBeerTypeStackView()

@@ -14,9 +14,9 @@ class BrewReviewDataSource: GenericDataSource<BrewReview>, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! UITableViewCell
+        let baseInfoCell = tableView.dequeueReusableCell(withIdentifier: BaseInfoCell.reuseID, for: indexPath) as! BaseInfoCell
         
-        return cell
+        return baseInfoCell
     }
 
 }

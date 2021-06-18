@@ -25,7 +25,7 @@ class BrewReviewVC: UIViewController {
     func configureTableView() {
         view.addSubview(tableView)
         
-      //  tableView.register(BaseInfoCell.self, forCellWithReuseIdentifier: BaseInfoCell.reuseID)
+        tableView.register(BaseInfoCell.self, forCellReuseIdentifier: BaseInfoCell.reuseID)
         
         tableView.backgroundColor = .black
         
@@ -33,7 +33,7 @@ class BrewReviewVC: UIViewController {
         tableView.dataSource = dataSource
         
         tableView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+//        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         UIView.setAnimationsEnabled(true)
         tableView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
     }
